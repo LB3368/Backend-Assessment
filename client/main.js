@@ -34,7 +34,7 @@ const setGoal = (evt) => {
 }
 
 const getQuote = () => {
-    axios.get('http://localhost:4000/api/quote/')
+    axios.get('http://localhost:4000/api/quotes/')
     .then(res => {
         const data = res.data
         alert(data)

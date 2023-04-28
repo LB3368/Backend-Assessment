@@ -28,7 +28,7 @@ module.exports = {
         res.status(200).send(goal)
     },
 
-    getGoals: (req, res) => {
+    getGoal: (req, res) => {
         res.status(200).send(goals)
     },
 
@@ -37,6 +37,8 @@ module.exports = {
 
         let randomIndex = Math.floor(Math.random() * quotes.length)
         let randomQuote = quotes[randomIndex]
+
+        quotes.innerHTML = randomQuote
 
         res.status(200).send(randomQuote)
     }
