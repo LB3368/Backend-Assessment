@@ -21,6 +21,15 @@ module.exports = {
         res.status(200).send(randomFortune)
     },
 
+    getNumber: (req, res) => {
+        const fortunes = [1,2,3,4,5,6,7,8,9,10]
+
+        let randomIndex = Math.floor(Math.random() * numbers.length)
+        let randomNumber = numbers[randomIndex]
+
+        res.status(200).send(randomNumber)
+    },
+
     setGoal: (req, res) => {
         const { goal } = req.body
         goals.push(goal)
@@ -41,6 +50,14 @@ module.exports = {
         quotes.innerHTML = randomQuote
 
         res.status(200).send(randomQuote)
+    },
+    getNumber: (req, res) => {
+        const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+        let randomIndex = Math.floor(Math.random() * numbers.length)
+        let randomNumber = numbers[randomIndex]
+
+        res.status(200).send(randomNumbers)
     }
 
 }
