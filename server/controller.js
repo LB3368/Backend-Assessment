@@ -1,5 +1,4 @@
 module.exports = {
-    goals: [],
 
     getCompliment: (req, res) => {
         const compliments = ["Gee, you're a smart cookie!", "Cool shirt!", "Your Javascript skills are stellar."];
@@ -32,12 +31,15 @@ module.exports = {
 
     setGoal: (req, res) => {
         const { goal } = req.body
+        let goals = module.exports.goals || []
         goals.push(goal)
+        module.exports.goals = goals
 
         res.status(200).send(goal)
     },
 
     getGoal: (req, res) => {
+        let goals = module.exports.goals || []
         res.status(200).send(goals)
     },
 

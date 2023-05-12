@@ -39,7 +39,7 @@ const setGoal = (evt) => {
     axios.post(`http://localhost:4000/api/goals/`, { goal })
     .then(res => {
         const data = res.data
-        alert('Your goal has been set! You are now working towards ${data}')
+        alert(`Your goal has been set! You are now working towards ${data}`)
     })
 }
 
